@@ -1,0 +1,8 @@
+{
+  "../node_modules/scroll-carousel-react/lib/scroll-carousel-react.esm.js -> scroll-carousel": {
+    "id": "../node_modules/scroll-carousel-react/lib/scroll-carousel-react.esm.js -> scroll-carousel",
+    "files": [
+      "static/chunks/_app-pages-browser_node_modules_scroll-carousel_dist_scroll_carousel_min_js.js"
+    ]
+  }
+}
