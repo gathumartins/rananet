@@ -4,28 +4,28 @@ import Link from "next/link";
 import Image from "next/image";
 import AboutNav from "../../../../components/AboutNav";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   // fetch data
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1OQ==`,
-//     {
-//       next: { revalidate: 60 },
-//     }
-//   ).then((res) => res.json());
+export async function generateMetadata(): Promise<Metadata> {
+  // fetch data
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1OQ==`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
 
-//   // optionally access and extend (rather than replace) parent metadat
-//   // console.log(seo);
-//   return {
-//     title: seo.pageSeo.title,
-//     description: seo.pageSeo.metaDesc,
-//     alternates: {
-//       canonical: seo.pageSeo.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [seo.pageSeo.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+  // optionally access and extend (rather than replace) parent metadat
+  // console.log(seo);
+  return {
+    title: seo.pageSeo.title,
+    description: seo.pageSeo.metaDesc,
+    alternates: {
+      canonical: seo.pageSeo.opengraphUrl,
+    },
+    openGraph: {
+      images: [seo.pageSeo.opengraphImage.sourceUrl],
+    },
+  };
+}
 async function page() {
   const myconts = await fetch(`${process.env.BASE_URL}/api/about`, {
     cache: "no-store",
