@@ -10,30 +10,30 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-// export async function generateMetadata(
-//   { params, searchParams }: Props,
-//   parent: ResolvingMetadata
-// ): Promise<Metadata> {
-//   const pageType = "event";
-//   const postSlug = params.eventId;
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/eventSeo?type=${pageType}&slug=${postSlug}`,
-//     {
-//       next: { revalidate: 60 },
-//     }
-//   ).then((res) => res.json());
-//   const data = seo.post.event.seo;
-//   return {
-//     title: data.title,
-//     description: data.metaDesc,
-//     alternates: {
-//       canonical: data.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [data.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const pageType = "event";
+  const postSlug = params.eventId;
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/eventSeo?type=${pageType}&slug=${postSlug}`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
+  const data = seo.post.event.seo;
+  return {
+    title: data.title,
+    description: data.metaDesc,
+    alternates: {
+      canonical: data.opengraphUrl,
+    },
+    openGraph: {
+      images: [data.opengraphImage.sourceUrl],
+    },
+  };
+}
 
 async function page({ params }: any) {
   const slug = params.eventId;
