@@ -7,19 +7,7 @@ import Header from "../components/Header";
 import flatListToHierarchical from "../lib/utils/flat";
 
 export default async function NotFound() {
-  // const res = await fetch(`${process.env.BASE_URL}/api/footer`, {
-  //   next: { revalidate: 60 },
-  // });
-  // const resLay = await fetch(`${process.env.BASE_URL}/api/layouts`, {
-  //   next: { revalidate: 60 },
-  // });
-  // const navs = await res.json();
-  // const lay = await resLay.json();
-  // const footNav = navs?.data?.menuItems?.nodes;
-  // const topNav = navs?.data?.topNav?.nodes;
-  // const menuFoot = flatListToHierarchical(footNav);
-  // const menuHeader = flatListToHierarchical(topNav);
-  // const sign = lay?.signup;
+
   return (
     <div className="min-h-full">
       <header className="sticky top-0"></header>
@@ -40,10 +28,6 @@ export default async function NotFound() {
           Let's get you back to RANA's home
         </Link>
       </main>
-      {/* <footer className="fixed w-full bottom-0 pt-[20px]">
-        <FooterBtm />
-        <div className="bg-[url('/images/copybg.webp')] bg-no-repeat absolute h-[90px] w-[166px] bottom-0 right-0"></div>
-      </footer> */}
     </div>
   );
 }
