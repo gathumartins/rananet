@@ -27,6 +27,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "rananet.vercel.app",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   reactStrictMode: true,
