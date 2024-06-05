@@ -1,28 +1,28 @@
 import { Metadata } from "next";
 import React from "react";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   // fetch data
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo0OA==`,
-//     {
-//       next: { revalidate: 60 },
-//     }
-//   ).then((res) => res.json());
+export async function generateMetadata(): Promise<Metadata> {
+  // fetch data
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo0OA==`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
 
-//   // optionally access and extend (rather than replace) parent metadat
+  // optionally access and extend (rather than replace) parent metadat
 
-//   return {
-//     title: seo.pageSeo.title,
-//     description: seo.pageSeo.metaDesc,
-//     alternates: {
-//       canonical: seo.pageSeo.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [seo.pageSeo.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+  return {
+    title: seo.pageSeo.title,
+    description: seo.pageSeo.metaDesc,
+    alternates: {
+      canonical: seo.pageSeo.opengraphUrl,
+    },
+    openGraph: {
+      images: [seo.pageSeo.opengraphImage.sourceUrl],
+    },
+  };
+}
 async function page() {
   const policy = await fetch(`${process.env.BASE_URL}/api/terms`, {
     next: { revalidate: 60 },
