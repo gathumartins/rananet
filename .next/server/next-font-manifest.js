@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/gathu/Desktop/rana/src/app/layout\":[\"static/media/3d9ea938b6afa941-s.p.woff2\",\"static/media/f04afcfc9494c96b-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

@@ -1,9 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/api/homePage/route": "app/api/homePage/route.js",
-  "/api/about/route": "app/api/about/route.js",
-  "/(user)/ournetwork/page": "app/(user)/ournetwork/page.js",
-  "/(user)/news/page": "app/(user)/news/page.js",
-  "/(user)/(getinvolved)/events/page": "app/(user)/(getinvolved)/events/page.js",
-  "/(user)/(getinvolved)/contactus/page": "app/(user)/(getinvolved)/contactus/page.js"
-}

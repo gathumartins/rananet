@@ -14,7 +14,7 @@
     "@apollo/experimental-nextjs-app-support": "^0.8.0",
     "@faustwp/cli": "^2.0.0",
     "@faustwp/core": "^2.1.2",
-    "@faustwp/experimental-app-router": "^0.2.2",
+    "@faustwp/experimental-app-router": "^0.3.1",
     "@next/font": "^14.1.0",
     "@vercel/speed-insights": "^1.0.3",
     "axios": "^1.6.2",
