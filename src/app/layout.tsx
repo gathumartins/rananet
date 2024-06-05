@@ -27,19 +27,19 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const res = await fetch(`${process.env.BASE_URL}/api/footer`, {
-  //   next: { revalidate: 60 },
-  // });
-  // const resLay = await fetch(`${process.env.BASE_URL}/api/layouts`, {
-  //   next: { revalidate: 60 },
-  // });
-  // const navs = await res.json();
-  // const lay = await resLay.json();
-  // const footNav = navs?.data?.menuItems?.nodes;
-  // const topNav = navs?.data?.topNav?.nodes;
-  // const menuFoot = flatListToHierarchical(footNav);
-  // const menuHeader = flatListToHierarchical(topNav);
-  // const sign = lay?.signup;
+  const res = await fetch(`${process.env.BASE_URL}/api/footer`, {
+    next: { revalidate: 60 },
+  });
+  const resLay = await fetch(`${process.env.BASE_URL}/api/layouts`, {
+    next: { revalidate: 60 },
+  });
+  const navs = await res.json();
+  const lay = await resLay.json();
+  const footNav = navs?.data?.menuItems?.nodes;
+  const topNav = navs?.data?.topNav?.nodes;
+  const menuFoot = flatListToHierarchical(footNav);
+  const menuHeader = flatListToHierarchical(topNav);
+  const sign = lay?.signup;
   return (
     <html>
       <body
@@ -49,10 +49,10 @@ export default async function RootLayout({
         <div id="siteTrans">
           <SpeedInsights />
 
-          {/* <Header navs={menuHeader} sign={sign} /> */}
+          <Header navs={menuHeader} sign={sign} />
           {children}
 
-          {/* <Footer navs={menuFoot} /> */}
+          <Footer navs={menuFoot} />
         </div>
         <Script
           src="/assets/scripts/translation.js"
