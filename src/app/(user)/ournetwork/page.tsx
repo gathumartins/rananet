@@ -4,24 +4,24 @@ import { Col, Row } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1NQ==`,
-//     {
-//       next: { revalidate: 60 },
-//     }
-//   ).then((res) => res.json());
-//   return {
-//     title: seo.pageSeo.title,
-//     description: seo.pageSeo.metaDesc,
-//     alternates: {
-//       canonical: seo.pageSeo.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [seo.pageSeo.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1NQ==`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
+  return {
+    title: seo.pageSeo.title,
+    description: seo.pageSeo.metaDesc,
+    alternates: {
+      canonical: seo.pageSeo.opengraphUrl,
+    },
+    openGraph: {
+      images: [seo.pageSeo.opengraphImage.sourceUrl],
+    },
+  };
+}
 
 async function page() {
   const mynet = await fetch(`${process.env.BASE_URL}/api/ournet`, {
