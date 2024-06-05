@@ -6,23 +6,23 @@ import HomeNews from "../components/HomeNews";
 import HomePartner from "../components/HomePartner";
 import HomePriorities from "../components/HomePriorities";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   // fetch data
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo0Mw==`
-//   ).then((res) => res.json());
+export async function generateMetadata(): Promise<Metadata> {
+  // fetch data
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo0Mw==`
+  ).then((res) => res.json());
 
-//   return {
-//     title: seo.pageSeo.title,
-//     description: seo.pageSeo.metaDesc,
-//     alternates: {
-//       canonical: seo.pageSeo.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [seo.pageSeo.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+  return {
+    title: seo.pageSeo.title,
+    description: seo.pageSeo.metaDesc,
+    alternates: {
+      canonical: seo.pageSeo.opengraphUrl,
+    },
+    openGraph: {
+      images: [seo.pageSeo.opengraphImage.sourceUrl],
+    },
+  };
+}
 async function HomePage(params: any) {
   const res = await fetch(`${process.env.BASE_URL}/api/homePage`, {
     next: { revalidate: 60 },
