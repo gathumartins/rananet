@@ -24,36 +24,35 @@ import React from "react";
 //   };
 // }
 async function page() {
-  // const policy = await fetch(`${process.env.BASE_URL}/api/terms`, {
-  //   next: { revalidate: 60 },
-  // });
-  // const data = await policy.json();
-  // const markup = { __html: data.content };
-  // const bgImage = data.featuredImage.node.sourceUrl;
+  const policy = await fetch(`${process.env.BASE_URL}/api/terms`, {
+    next: { revalidate: 60 },
+  });
+  const data = await policy.json();
+  const markup = { __html: data.content };
+  const bgImage = data.featuredImage.node.sourceUrl;
   return (
-    <h1>Terms conditions</h1>
-    // <main>
-    //   <header
-    //     className="topBann"
-    //     style={{ backgroundImage: `url(${bgImage})` }}
-    //   >
-    //     <div className="container flex justify-start place-items-center">
-    //       <h1 className="topHeroCont">
-    //         {data.pages.customTitle !== ""
-    //           ? data.pages.customTitle
-    //           : data.title}
-    //       </h1>
-    //     </div>
-    //   </header>
-    //   <article className="relative">
-    //     <section className="container py-[40px]">
-    //       <div
-    //         className="text-base text-resilience [&_b]:!font-bolder [&_strong]:!font-bolder [&_strong]:font-rsans [&_b]:font-rsans [&>p]:mb-[20px] [&>ol>li]:mb-[20px] [&>ol]:pl-[20px] [&>ol>li]:list-decimal [&>ol>li>ul>li]:mb-[20px] [&>ol>li>ul]:pl-[20px] [&>ol>li>ul>li]:list-disc"
-    //         dangerouslySetInnerHTML={markup}
-    //       ></div>
-    //     </section>
-    //   </article>
-    // </main>
+    <main>
+      <header
+        className="topBann"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div className="container flex justify-start place-items-center">
+          <h1 className="topHeroCont">
+            {data.pages.customTitle !== ""
+              ? data.pages.customTitle
+              : data.title}
+          </h1>
+        </div>
+      </header>
+      <article className="relative">
+        <section className="container py-[40px]">
+          <div
+            className="text-base text-resilience [&_b]:!font-bolder [&_strong]:!font-bolder [&_strong]:font-rsans [&_b]:font-rsans [&>p]:mb-[20px] [&>ol>li]:mb-[20px] [&>ol]:pl-[20px] [&>ol>li]:list-decimal [&>ol>li>ul>li]:mb-[20px] [&>ol>li>ul]:pl-[20px] [&>ol>li>ul>li]:list-disc"
+            dangerouslySetInnerHTML={markup}
+          ></div>
+        </section>
+      </article>
+    </main>
   );
 }
 
