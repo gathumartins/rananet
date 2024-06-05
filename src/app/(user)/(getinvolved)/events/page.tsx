@@ -3,28 +3,28 @@ import React from "react";
 import { Row, Col } from "react-bootstrap";
 import EventCont from "../../../../components/EventCont";
 
-// export async function generateMetadata(): Promise<Metadata> {
-//   // fetch data
-//   const seo = await fetch(
-//     `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1NA==`,
-//     {
-//       next: { revalidate: 60 },
-//     }
-//   ).then((res) => res.json());
+export async function generateMetadata(): Promise<Metadata> {
+  // fetch data
+  const seo = await fetch(
+    `${process.env.BASE_URL}/api/pagesSeo?id=cG9zdDo1NA==`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
 
-//   // optionally access and extend (rather than replace) parent metadat
+  // optionally access and extend (rather than replace) parent metadat
 
-//   return {
-//     title: seo.pageSeo.title,
-//     description: seo.pageSeo.metaDesc,
-//     alternates: {
-//       canonical: seo.pageSeo.opengraphUrl,
-//     },
-//     openGraph: {
-//       images: [seo.pageSeo.opengraphImage.sourceUrl],
-//     },
-//   };
-// }
+  return {
+    title: seo.pageSeo.title,
+    description: seo.pageSeo.metaDesc,
+    alternates: {
+      canonical: seo.pageSeo.opengraphUrl,
+    },
+    openGraph: {
+      images: [seo.pageSeo.opengraphImage.sourceUrl],
+    },
+  };
+}
 async function page() {
   const myconts = await fetch(`${process.env.BASE_URL}/api/evnt`, {
     cache: "no-store",
