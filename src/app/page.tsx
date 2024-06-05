@@ -42,7 +42,6 @@ async function HomePage(params: any) {
   return (
     <>
       <main>
-        <h1>Home page</h1>
         <HomeHero hero={hero} />
         <HomePartner partners={partners} />
         <HomePriorities priorities={priorities} />
